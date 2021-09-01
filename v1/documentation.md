@@ -14,7 +14,7 @@ curl --location --request POST 'https://europe-west3-kotanimac.cloudfunctions.ne
 <dl><dt>success</dt></dl>
 
 ```json5  
-   { status: 201, accessToken: `${accessToken}` } 
+   { accessToken: `${accessToken}` } 
 ```
 
 <dl><dt>fail</dt></dl>
