@@ -40,14 +40,14 @@ curl --location --request POST 'https://europe-west3-kotanimac.cloudfunctions.ne
 <dl><dt>success</dt></dl>
 
 ```json5  
-   { "status": 201, "userId": {{userID}} } 
+   { status: 201, userId: {{userID}} } 
 ```
 
 <dl><dt>fail</dt></dl>
 
 ```json5 
-  { "status": 400, "desc": "user exists", "userId": {{userID}} }
-  { "status": 400, "desc": "invalid phoneNumber" }
+  { status: 400, desc: "user exists", userId: {{userID}} }
+  { status: 400, desc: "invalid phoneNumber" }
 ```
 ---
 
@@ -159,14 +159,14 @@ curl --location --request POST 'https://europe-west3-kotanimac.cloudfunctions.ne
 <dl><dt>success</dt></dl>
 
 ```json5  
-   {status: 201, "desc": `User is a beneficiary`} 
+   {status: 201, desc: `User is a beneficiary`} 
 ```
 
 <dl><dt>fail</dt></dl>
 
 ```json5 
-  {status: 400, "desc": `Not a beneficiary`}
-  { "status" : 400, "desc" : `Invalid request` }
+  {status: 400, desc: `Not a beneficiary`}
+  {status: 400, desc: `Invalid request` }
 ```
 ---
 
@@ -195,7 +195,7 @@ curl --location --request POST 'https://europe-west3-kotanimac.cloudfunctions.ne
   { status: 400, desc: `Unable to process your UBI claim, Its not yet time, Retry claim after: ${claimTime}` }
   { status: 400, desc: `Insufficient funds in the UBI account. \nPlease try again later` }
   { status: 400, desc: `You\'re not approved to access this service` }
-  { status: 400,  desc: "user account is not verified" }
+  { status: 400, desc: "user account is not verified" }
   { status: 400, desc: `${userMSISDN} is not a valid phoneNumber` } 
 ```
 ---
@@ -224,15 +224,15 @@ curl --location --request POST 'https://europe-west3-kotanimac.cloudfunctions.ne
 <dl><dt>success</dt></dl>
 
 ```json5  
-   { "status" : 201, "phoneNumber": `${phoneNumber}`,  "amountWithdrawn" : { "currency" : `${localCurrency}`, "amount" : `${localCurrencyAmount}`}, "txnHash" : `${transactionHash}`, "depositReference": `fiatTxnReferenceId` } 
+   { status: 201, phoneNumber: `${phoneNumber}`,  amountWithdrawn: { currency: `${localCurrency}`, amount: `${localCurrencyAmount}`}, txnHash: `${transactionHash}`, depositReference: `fiatTxnReferenceId` } 
 ```
 
 <dl><dt>fail</dt></dl>
 
 ```json5 
-  { "status" : 400, "phoneNumber": `${withdrawMSISDN}`, "desc": `invalid phoneNumber`}
-  { "status": 400, "desc": "user account does not exist" }
-  { "status": 400, "desc": "user account is not verified" } 
+  { status: 400, phoneNumber: `${withdrawMSISDN}`, desc: `invalid phoneNumber`}
+  { status: 400, desc: "user account does not exist" }
+  { status: 400, desc: "user account is not verified" } 
 ```
 ---
 
